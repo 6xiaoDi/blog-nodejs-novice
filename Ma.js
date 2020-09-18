@@ -1,4 +1,5 @@
 console.log("我是Ma.js文件");
+require("./Mb");
 let a = 10;
 class Person{
 	constructor(){
@@ -8,7 +9,5 @@ class Person{
 		console.log("喜欢篮球");
 	}
 }
-module.exports = {
-	a,
-	Person
-}
+exports.a = a;
+exports.Person = Person;
