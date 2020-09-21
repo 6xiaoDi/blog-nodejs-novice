@@ -24,7 +24,7 @@ const fs = require("fs");
 //     }
 // });
 
-fs.rmdir('xd的目录', err=>{
+fs.rmdir('123', err=>{
     if(err){
         console.log(err);
     }else{
