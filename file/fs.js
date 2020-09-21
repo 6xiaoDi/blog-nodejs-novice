@@ -7,7 +7,15 @@ const fs = require("fs");
 //     }
 // })
 
-fs.readFile("1.txt","utf-8",function(err,data){
+// fs.readFile("1.txt","utf-8",function(err,data){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(data)
+//     }
+// })
+
+fs.readFile("1.txt",function(err,data){
     if(err){
         console.log(err);
     }else{
