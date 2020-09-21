@@ -30,9 +30,14 @@ const fs = require("fs");
 //     console.log("删除成功");
 // })
 
-fs.copyFile("fs.js","111.txt", err=>{
-    if(err){
-        return console.log(err);
-    }
-    console.log("复制成功!");
-});
+// fs.copyFile("fs.js","111.txt", err=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("复制成功!");
+// });
+
+function mycopy(src, dest){
+    fs.writeFileSync(dest,fs.readFileSync(src));
+}
+mycopy("1.txt","4.txt");
