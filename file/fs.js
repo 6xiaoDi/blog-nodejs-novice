@@ -37,7 +37,15 @@ const fs = require("fs");
 //     console.log("复制成功!");
 // });
 
-function mycopy(src, dest){
-    fs.writeFileSync(dest,fs.readFileSync(src));
-}
-mycopy("1.txt","4.txt");
+// function mycopy(src, dest){
+//     fs.writeFileSync(dest,fs.readFileSync(src));
+// }
+// mycopy("1.txt","4.txt");
+
+fs.rename("1.txt","5.txt",function (err) {
+    if(err){
+        console.log(err);
+    }else{
+        console.log("修改成功");
+    }
+});
