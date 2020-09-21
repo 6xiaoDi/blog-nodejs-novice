@@ -15,10 +15,17 @@ const fs = require("fs");
 //     }
 // })
 
-fs.readFile("1.txt",function(err,data){
+// fs.readFile("1.txt",function(err,data){
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(data.toString())
+//     }
+// })
+
+fs.unlink("2.txt",err=>{
     if(err){
-        console.log(err);
-    }else{
-        console.log(data.toString())
+        return console.log(err);
     }
+    console.log("删除成功");
 })
