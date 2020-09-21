@@ -24,10 +24,14 @@ const fs = require("fs");
 //     }
 // });
 
-fs.rmdir('123', err=>{
-    if(err){
-        console.log(err);
-    }else{
-        console.log("删除目录成功");
-    }
-});
+// fs.rmdir('123', err=>{
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("删除目录成功");
+//     }
+// });
+
+fs.exists("xd的目录", exists=>{
+    console.log(exists);
+})
