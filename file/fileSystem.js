@@ -32,6 +32,14 @@ const fs = require("fs");
 //     }
 // });
 
-fs.exists("xd的目录", exists=>{
-    console.log(exists);
-})
+// fs.exists("xd的目录", exists=>{
+//     console.log(exists);
+// })
+
+fs.stat("filesystem.js", (err, stat)=>{
+    if(err){
+        console.log(err);
+    }else{
+        console.log(stat);
+    }
+});
