@@ -36,10 +36,25 @@ const fs = require("fs");
 //     console.log(exists);
 // })
 
+// fs.stat("filesystem.js", (err, stat)=>{
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(stat);
+//     }
+// });
+
+// 获取文件或者目录的详细信息
 fs.stat("filesystem.js", (err, stat)=>{
     if(err){
         console.log(err);
     }else{
         console.log(stat);
     }
+    // 判断文件是否是文件
+    let res =  stat.isFile();
+    console.log(res);
+    // 判断文件是否是文件夹/目录
+    res =  stat.isDirectory();
+    console.log(res);
 });
