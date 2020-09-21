@@ -1,0 +1,25 @@
+{
+  "name": "nodejs01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cookie": "^0.4.1",
+    "jquery": "^3.5.1",
+    "mytest": "^1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6xiaoDi/blog-nodejs-novice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/6xiaoDi/blog-nodejs-novice/issues"
+  },
+  "homepage": "https://github.com/6xiaoDi/blog-nodejs-novice#readme"
+}
