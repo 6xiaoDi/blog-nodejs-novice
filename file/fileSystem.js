@@ -16,10 +16,18 @@ const fs = require("fs");
 //     }
 // });
 
-fs.readdir("xd的目录", (err, data)=>{
+// fs.readdir("xd的目录", (err, data)=>{
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log(data);
+//     }
+// });
+
+fs.rmdir('xd的目录', err=>{
     if(err){
         console.log(err);
     }else{
-        console.log(data);
+        console.log("删除目录成功");
     }
 });
