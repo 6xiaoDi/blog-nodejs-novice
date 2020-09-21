@@ -1,5 +1,5 @@
 const fs = require("fs");
-fs.writeFile("1.txt","我是1.txt文件",function(err){
+fs.writeFile("1.txt","我是1.txt文件11111",function(err){
     if(err){
         console.log(err);
     }else{
