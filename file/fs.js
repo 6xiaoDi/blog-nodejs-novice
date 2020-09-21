@@ -42,10 +42,14 @@ const fs = require("fs");
 // }
 // mycopy("1.txt","4.txt");
 
-fs.rename("1.txt","5.txt",function (err) {
-    if(err){
-        console.log(err);
-    }else{
-        console.log("修改成功");
-    }
-});
+// fs.rename("1.txt","5.txt",function (err) {
+//     if(err){
+//         console.log(err);
+//     }else{
+//         console.log("修改成功");
+//     }
+// });
+
+fs.exists("4.txt",function (exists) {
+    console.log(exists);
+})
