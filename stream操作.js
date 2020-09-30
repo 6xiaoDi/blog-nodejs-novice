@@ -10,6 +10,11 @@ let buffer = Buffer.alloc(65*1024);
 // })
 let rs = fs.createReadStream("64kb");
 // 每次一小段一小段读取的chunk
+// rs.on("data",chunk=>{
+//     console.log(chunk);
+// })
+let num = 0;
 rs.on("data",chunk=>{
-    console.log(chunk);
+    num++;
+    console.log(num);
 })
