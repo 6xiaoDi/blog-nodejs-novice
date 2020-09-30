@@ -8,14 +8,27 @@ const fs = require("fs");
 //     }
 //     console.log("写入成功");
 // })
-let rs = fs.createReadStream("64kb(2)");
+// let rs = fs.createReadStream("64kb(2)");
 // 每次一小段一小段读取的chunk
 // rs.on("data",chunk=>{
 //     console.log(chunk);
 // })
+// let num = 0;
+// rs.on("data",chunk=>{
+//     num++;
+//     console.log(num);
+// })
+
+let rs = fs.createReadStream("1.txt");
 let num = 0;
+let str = "";
+// 每次一小段一小段读取的chunk
 rs.on("data",chunk=>{
     num++;
+    str += chunk; // buffer加等于变成字符串
     console.log(num);
 })
-
+// 流完成了；
+rs.on("end",()=>{
+    console.log(str);
+})
