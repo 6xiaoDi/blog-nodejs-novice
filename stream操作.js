@@ -20,15 +20,17 @@ const fs = require("fs");
 // })
 
 let rs = fs.createReadStream("1.txt");
-let num = 0;
-let str = "";
-// 每次一小段一小段读取的chunk
-rs.on("data",chunk=>{
-    num++;
-    str += chunk; // buffer加等于变成字符串
-    console.log(num);
-})
-// 流完成了；
-rs.on("end",()=>{
-    console.log(str);
-})
+// let num = 0;
+// let str = "";
+// // 每次一小段一小段读取的chunk
+// rs.on("data",chunk=>{
+//     num++;
+//     str += chunk; // buffer加等于变成字符串
+//     console.log(num);
+// })
+// // 流完成了；
+// rs.on("end",()=>{
+//     console.log(str);
+// })
+let ws = fs.createWriteStream("2.txt");
+rs.pipe(ws);
