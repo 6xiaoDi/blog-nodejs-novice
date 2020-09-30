@@ -12,7 +12,8 @@ app.use(views(__dirname+"/views",{
 }));
 // "/" 获取主页
 router.get("/",async ctx=>{
-    ctx.body = "hello";
+    // 渲染，注意渲染是需要时间，它是异步的
+    await ctx.render("index.pug");
 });
 app.use(router.routes());
 app.listen(3000);
