@@ -52,3 +52,7 @@ html(lang="en")
             div 我是非常常用的div
         +mydiv
         +mydiv
+        mixin pet(name,sex)
+            p 这是一只#{name};它的性别是#{sex}
+        +pet("狗狗","公")
+        +pet("猫","母")
