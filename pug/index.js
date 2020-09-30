@@ -13,8 +13,10 @@ app.use(views(__dirname+"/views",{
 // "/" 获取主页
 router.get("/",async ctx=>{
     // 渲染，注意渲染是需要时间，它是异步的
+    let users = [{name:"张三",age:20,height:"178cm"},{name:"李四",age:25,height:"179cm"},{name:"王五",age:26,height:"180cm"}];
     await ctx.render("index.pug",{
         data:"我是数据",
+        users
     });
 });
 app.use(router.routes());

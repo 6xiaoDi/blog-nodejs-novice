@@ -33,3 +33,7 @@ html(lang="en")
         - let str = "你好"
         p #{str}
         p #{data}
+        ul
+            // 通过each循环
+            each item,index in users
+                li 姓名是：#{item.name};年龄是：#{item.age};身高是：#{item.height};索引是：#{index}
