@@ -14,3 +14,9 @@ html(lang="en")
         h1 我是标题
         div 我是div
         div(class="mydiv") 我是类名为mydiv的div
+            br
+            span 我是span
+        //- div 简写形式（直接写class即可，类似css的选择器形式），style属性值是类js环境，以对象方式
+        .mydiv2(style={width:"100px",height:"100px",background:"blue"}) 我是div2
+        //- div 简写形式（id）
+        #myid 我是id为myid的div
