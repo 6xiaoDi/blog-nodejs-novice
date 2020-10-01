@@ -25,12 +25,14 @@
     </ul>
     {{str | replace("world","世界") | capitalize}}
     <!-- macro:宏标签 -->
-    <!-- 定义了一个pet函数 -->
-    {% macro pet(name='mm',sex='m') %}
+    <!-- 定义了一个pei函数 -->
+    {% macro pet(name="狗狗",sex) %}
     <p>我是一只{{name}},我的性别是{{sex}}</p>
     {% endmacro %}
     <!-- 调用 -->
     {{pet("小狗","公")}}
-    {{pet()}}
+    {{pet("公")}}
+    {{pet("小猫","公")}}
+    {% include 'footer.html' %}
 </body>
 </html>
