@@ -12,8 +12,12 @@ app.use(nunjucks({
     }
 }))
 router.get("/",async ctx=>{
+    // ctx.body = "hello";
     // ext已经设置后缀名了，这里就不需要重复再加后缀了
-    await ctx.render("index");
+    await ctx.render("index",{
+        username:"张三",
+        num:3
+    });
 })
 app.use(router.routes())
 app.listen(8000);

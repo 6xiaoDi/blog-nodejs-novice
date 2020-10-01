@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>我是标题</h1>
+    <p>用户名是：{{username}}</p>
+    <!-- 我是注释 -->
+    {# 我是nunjucks注释 #}
+    {% if num>3 %}
+    <p>num值大于三</p>
+    {% elseif num<3 %}
+    <p>num值小于三</p>
+    {% else %}
+    <p>num值等于三</p>
+    {% endif %}
 </body>
 </html>
