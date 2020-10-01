@@ -31,5 +31,10 @@ router.get("/",async ctx=>{
 router.get("/son1",async ctx=>{
     await ctx.render("son1");
 })
+
+router.get("/import",async ctx=>{
+    await ctx.render("import");
+})
+
 app.use(router.routes())
 app.listen(8000);

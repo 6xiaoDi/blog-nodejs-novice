@@ -29,6 +29,9 @@
     {% macro pet(name="狗狗",sex) %}
     <p>我是一只{{name}},我的性别是{{sex}}</p>
     {% endmacro %}
+    {% macro person(name="小明",sex) %}
+    <p>我是{{name}},我的性别是{{sex}}</p>
+    {% endmacro %}
     <!-- 调用 -->
     {{pet("小狗","公")}}
     {{pet("公")}}
