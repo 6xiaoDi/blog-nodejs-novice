@@ -27,5 +27,9 @@ router.get("/",async ctx=>{
         str:"hello world"
     });
 })
+// 再加一个路由
+router.get("/son1",async ctx=>{
+    await ctx.render("son1");
+})
 app.use(router.routes())
 app.listen(8000);
