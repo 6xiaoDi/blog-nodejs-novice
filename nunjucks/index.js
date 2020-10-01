@@ -23,7 +23,8 @@ router.get("/",async ctx=>{
         },{
             name:"李四",
             age:28
-        }]
+        }],
+        str:"hello world"
     });
 })
 app.use(router.routes())
