@@ -24,5 +24,13 @@
         {% endfor %}
     </ul>
     {{str | replace("world","世界") | capitalize}}
+    <!-- macro:宏标签 -->
+    <!-- 定义了一个pet函数 -->
+    {% macro pet(name='mm',sex='m') %}
+    <p>我是一只{{name}},我的性别是{{sex}}</p>
+    {% endmacro %}
+    <!-- 调用 -->
+    {{pet("小狗","公")}}
+    {{pet()}}
 </body>
 </html>
