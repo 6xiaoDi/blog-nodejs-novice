@@ -18,5 +18,10 @@
     {% else %}
     <p>num值等于三</p>
     {% endif %}
+    <ul>
+        {% for item in arr %}
+        <li>姓名是：{{item.name}}；年龄是：{{item.age}};</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

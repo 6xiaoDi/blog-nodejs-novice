@@ -16,7 +16,14 @@ router.get("/",async ctx=>{
     // ext已经设置后缀名了，这里就不需要重复再加后缀了
     await ctx.render("index",{
         username:"张三",
-        num:3
+        num:2,
+        arr:[{
+            name:"张三",
+            age:20
+        },{
+            name:"李四",
+            age:28
+        }]
     });
 })
 app.use(router.routes())
