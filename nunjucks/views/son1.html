@@ -9,11 +9,15 @@
 <body>
     <!-- 继承模版 -->
     {% extends 'parent.html' %}
-    {% block left1 %}
+    {% block left %}
         我是son1里左侧内容
     {% endblock %}
-    {% block right1 %}
+    {% block right %}
         我是son1里右侧侧内容
+    {% endblock %}
+    <!-- 使用父级的内容 -->
+    {% block somevalue %}
+    {{super()}}
     {% endblock %}
 </body>
 </html>
