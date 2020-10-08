@@ -11,8 +11,17 @@ let server = http.createServer((req,res)=>{
         console.log(indexData.toString());
         res.write(indexData);
     }else if (req.url==="/detail"){
-        res.setHeader("content-type","text/html;charset=utf8");
-        res.write("详细页面");
+        let detailData =  fs.readFileSync("./views/detail.html");
+        res.write(detailData);
+        // 当它等于一个接口的时候
+    }else if(req.url==="/getData"){
+        // 类似模拟json数据
+        let obj  = {
+            name:"张三",
+            age:20
+        };
+        // 变成JSON输出到页面上
+        res.write(JSON.stringify(obj));
     }
     res.end();
 })
