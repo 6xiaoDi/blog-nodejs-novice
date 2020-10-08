@@ -7,7 +7,7 @@ let app = new Koa();  //Application
 // next 将控制权转交给下一个中间件
 let m1 = function(ctx,next){
     console.log("m1start");
-    next();  //转交控制权给下一个中间件；m2();
+    // next();  //转交控制权给下一个中间件；m2();
     console.log("m1end");
 }
 let m2 = function(ctx,next){
