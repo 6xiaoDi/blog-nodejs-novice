@@ -1,5 +1,6 @@
 const fs = require("fs");
-const path = require("path");
+const mime =  require("./mime.json");  // require 自动转为json对象，不需要用JSON.parse
+const path = require("path");  // 提供获取后缀的方法
 // 创建服务器
 const http = require("http");
 // req 客户端到node端 res 返还相关（服务端给浏览器的）
@@ -27,9 +28,9 @@ let server = http.createServer((req,res)=>{
         // 获取后缀；
         let extName = path.extname(req.url);
         // 设置头部
-        res.setHeader("content-type","text/css");
+        res.setHeader("content-type",mime[extName]);
         // __dirname 当前文件的绝对地址
-        let cssData =  fs.readFileSync(__dirname+"/views/css/index.css");
+        let cssData =  fs.readFileSync(__dirname+"/views"+req.url)
         res.write(cssData);
     }
     res.end();
