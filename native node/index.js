@@ -4,8 +4,10 @@ const http = require("http");
 let server = http.createServer((req,res)=>{
     console.log(req.url);
     if(req.url==="/index"){
+        res.setHeader("content-type","text/html;charset=utf8");
         res.write("主页");
     }else if (req.url==="/detail"){
+        res.setHeader("content-type","text/html;charset=utf8");
         res.write("详细页面");
     }
     res.end();
