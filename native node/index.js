@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 // 创建服务器
 const http = require("http");
 // req 客户端到node端 res 返还相关（服务端给浏览器的）
@@ -22,6 +23,14 @@ let server = http.createServer((req,res)=>{
         };
         // 变成JSON输出到页面上
         res.write(JSON.stringify(obj));
+    }else{
+        // 获取后缀；
+        let extName = path.extname(req.url);
+        // 设置头部
+        res.setHeader("content-type","text/css");
+        // __dirname 当前文件的绝对地址
+        let cssData =  fs.readFileSync(__dirname+"/views/css/index.css");
+        res.write(cssData);
     }
     res.end();
 })
