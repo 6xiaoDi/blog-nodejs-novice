@@ -16,13 +16,18 @@ let m2 = function(ctx,next){
     next();
     console.log("m2end");
 }
+
 app.use(m1);
 app.use(m2);
-app.use(ctx=>{
-    // console.log(ctx.req.url);
-    // console.log(ctx.request.query);
-    console.log(ctx.request.query.age);
-    ctx.body = "hello world 你好";
+
+app.use(async ctx=>{
+    let res = await new Promise(resolve=>{
+        setTimeout(() => {
+            resolve("结果");
+        }, 1000);
+    })
+    console.log(res);
+    ctx.response.body = "hello world 你好";
 })
 
 // 错误处理中间件；
