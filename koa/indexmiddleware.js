@@ -21,12 +21,12 @@ app.use(m1);
 app.use(m2);
 
 app.use(async ctx=>{
-    let res = await new Promise(resolve=>{
-        setTimeout(() => {
-            resolve("结果");
-        }, 1000);
-    })
-    console.log(res);
+    // let res = await new Promise(resolve=>{
+    //     setTimeout(() => {
+    //         resolve("结果");
+    //     }, 1000);
+    // })
+    // console.log(res);
     ctx.response.body = "hello world 你好";
 })
 
