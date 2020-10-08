@@ -8,7 +8,7 @@ let server = http.createServer((req,res)=>{
         res.setHeader("content-type","text/html;charset=utf8");
         // 同步读取文件
         let indexData =  fs.readFileSync("./views/index.html");
-        console.log(indexData.toString());
+        // console.log(indexData.toString());
         res.write(indexData);
     }else if (req.url==="/detail"){
         let detailData =  fs.readFileSync("./views/detail.html");
