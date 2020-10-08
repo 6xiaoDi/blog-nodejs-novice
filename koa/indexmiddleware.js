@@ -19,7 +19,8 @@ let m2 = function(ctx,next){
 app.use(m1);
 app.use(m2);
 app.use(ctx=>{
-    console.log(ctx.req.url);
+    // console.log(ctx.req.url);
+    console.log(ctx.request.query);
     ctx.body = "hello world 你好";
 })
 
