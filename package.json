@@ -19,6 +19,9 @@
   "homepage": "https://github.com/6xiaoDi/blog-nodejs-novice#readme",
   "dependencies": {
     "koa": "^2.13.0",
-    "koa-router": "^9.4.0"
+    "koa-router": "^9.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.3.1",
+    "pug": "^3.0.0"
   }
 }
