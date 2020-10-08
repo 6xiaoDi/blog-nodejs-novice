@@ -3,6 +3,7 @@
 const http = require("http");
 // req 浏览器到node端 res 返还相关（服务端给浏览器的）
 let server = http.createServer((req,res)=>{
+    console.log(req.url);
     res.write("hello client");
     res.end();
 })
