@@ -20,7 +20,8 @@ app.use(m1);
 app.use(m2);
 app.use(ctx=>{
     // console.log(ctx.req.url);
-    console.log(ctx.request.query);
+    // console.log(ctx.request.query);
+    console.log(ctx.request.query.age);
     ctx.body = "hello world 你好";
 })
 
