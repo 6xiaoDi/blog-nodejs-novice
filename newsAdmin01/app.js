@@ -3,18 +3,20 @@
 const Koa = require("koa");
 const views = require("koa-views");
 const static = require("koa-static");
-const Router = require("koa-router");
+// const Router = require("koa-router");
+const router = require("./router"); // 接收导出的函数
 
 let app = new Koa();
-let router = new Router();
-router.get("/", ctx=>{
-    ctx.body = "主页"
-});
+// let router = new Router();
+// router.get("/", ctx=>{
+//     ctx.body = "主页"
+// });
 
 // 引入模板引擎
 app.use(views(__dirname+"/views",{
     extension:"pug"
 }));
 app.use(static(__dirname+"/static"));
-app.use(router.routes());
+router(app); // 参数传入router.js导出的函数
+// app.use(router.routes());
 app.listen(4000);
