@@ -1,10 +1,7 @@
-const Index = require("koa-router");
+let adminRouter = require("./routers/adminRouter"); // 后台管理路由
+let newsRouter = require("./routers/newsRouter"); // 新闻页面路由
 
-// 解决关联上述问题：
 module.exports = function(app){
-    let router = new Index();
-    router.get("/", ctx=>{
-        ctx.body = "主页"
-    });
-    app.use(router.routes());
+    app.use(adminRouter.routes());
+    app.use(newsRouter.routes());
 }
