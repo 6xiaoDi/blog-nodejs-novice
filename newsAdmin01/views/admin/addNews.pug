@@ -9,6 +9,8 @@ html(lang='en')
     body
         .menu-content
             h1 添加新闻
+            //- '/admin/addNewsData'对应admin.js中接口
+            //- enctype="multipart/form-data"上传文件必须指定此格式类型，否则上传失败
             form.addInput(method='post', action='/admin/addNewsData' enctype="multipart/form-data")
                 div
                     | 标题：
