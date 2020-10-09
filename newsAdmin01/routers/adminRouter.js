@@ -8,4 +8,11 @@ router.get("/index",async ctx=>{
     // ctx.body = "后端管理的主页"
     await ctx.render("admin/admin");
 });
+// 加载添加页面的路由
+router.get("/addNews",async ctx=>{
+    await ctx.render("admin/addNews");
+})
+router.get("/newsList",async ctx=>{
+    ctx.body = "新闻列表";
+})
 module.exports = router;

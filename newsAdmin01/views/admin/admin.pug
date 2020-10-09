@@ -12,3 +12,24 @@ html(lang='en')
                 ul
                     li 新闻添加
                     li 新闻列表
+            iframe(src='/admin/addNews', frameborder='0', width='800px')
+        script.
+            let lis = document.querySelectorAll("li");
+            Array.from(lis).forEach(v => {
+                v.onclick = function () {
+                    Array.from(lis).forEach(value => {
+                        if (this == value) {
+                            this.style.color = "rgb(255, 208, 75)";
+                            let iframeNode = document.querySelector("iframe");
+                            if (this.textContent == "新闻添加") {
+                                iframeNode.src = "/admin/addNews";
+                            } else {
+                                //新闻列表
+                                iframeNode.src = "/admin/newsList";
+                            }
+                        } else {
+                            value.style.color = "white";
+                        }
+                    })
+                }
+            })
