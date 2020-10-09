@@ -9,61 +9,17 @@ html(lang='en')
     body
         .wrap
             ul.news-list
-                li.news
-                    a(href='javascript:;')
-                        img(src='./img/img.png', alt='')
-                    div
-                        h3
-                            a(href='javascript:;') 18人死伤！韩国一男子纵火后持凶器伤害避险邻居
-                        .info
-                            span.tips
-                                span 韩国
-                            // <span class="line"></span>
-                            span.time |   1小时前
-                li.news
-                    a(href='javascript:;')
-                        img(src='./img/img.png', alt='')
-                    div
-                        h3
-                            a(href='javascript:;') 18人死伤！韩国一男子纵火后持凶器伤害避险邻居
-                        .info
-                            span.tips
-                                span 韩国
-                            // <span class="line"></span>
-                            span.time |   1小时前
-                li.news
-                    a(href='javascript:;')
-                        img(src='./img/img.png', alt='')
-                    div
-                        h3
-                            a(href='javascript:;') 18人死伤！韩国一男子纵火后持凶器伤害避险邻居
-                        .info
-                            span.tips
-                                span 韩国
-                            // <span class="line"></span>
-                            span.time |   1小时前
-                li.news
-                    a(href='javascript:;')
-                        img(src='./img/img.png', alt='')
-                    div
-                        h3
-                            a(href='javascript:;') 18人死伤！韩国一男子纵火后持凶器伤害避险邻居
-                        .info
-                            span.tips
-                                span 韩国
-                            // <span class="line"></span>
-                            span.time |   1小时前
-                li.news
-                    a(href='javascript:;')
-                        img(src='./img/img.png', alt='')
-                    div
-                        h3
-                            a(href='javascript:;') 18人死伤！韩国一男子纵火后持凶器伤害避险邻居
-                        .info
-                            span.tips
-                                span 韩国
-                            // <span class="line"></span>
-                            span.time |   1小时前
+                each val in newsData
+                    li.news
+                        a(href='javascript:;')
+                            img(src=val.imgUrl, alt='')
+                        div
+                            h3
+                                a(href='javascript:;') #{val.title}
+                            .info
+                                span.tips
+                                    span #{val.country}
+                                span.time |   #{val.addTime}
             .pagination
                 a.prev(href='javascript:;') ⌜
                 a(href='javascript:;') 1
