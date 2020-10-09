@@ -23,14 +23,17 @@ router.get("/index",async ctx=>{
     // 加入配置项，这样可能PC端和移动端要求每页的条数不一样的
     let perPage = ctx.request.query.perPage || 5;
     // 当前页码；
-    let p = 1;
+    let p = ctx.request.query.p || 1;
     // 数据的总条数；
     let dataCount = newsData.length;
     // 页码数  13条  每页显示5条 当前页面1页（向上取整）；
     let pCount = Math.ceil(dataCount/perPage);
+    //根据页码显示需要呈现的数据(后边涉及传址的问题<类似dataCount，如果定义到后面也会受到影响>，不涉及undefined、function，做一下简单的深拷贝，用序列化)；
+    //（数据库传数据会更简单）mysql :LIMIT 0,5;  mongodb:  limit(5).skip(0);
+    let showData = JSON.parse(JSON.stringify(newsData)).splice((p-1)*perPage,perPage);
     // 加载views中index
     await ctx.render("index",{
-        newsData,
+        showData,
         pCount
     });
 })

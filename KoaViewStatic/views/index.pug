@@ -9,7 +9,7 @@ html(lang='en')
     body
         .wrap
             ul.news-list
-                each val in newsData
+                each val in showData
                     li.news
                         a(href='javascript:;')
                             img(src=val.imgUrl, alt='')
@@ -23,5 +23,5 @@ html(lang='en')
             .pagination
                 a.prev(href='javascript:;') ⌜
                 - for(let i=1;i<=pCount;i++)
-                    a(href='javascript:;') #{i}
+                    a(href='/index?p='+i) #{i}
                 a.next(href='javascript:;') ⌝
