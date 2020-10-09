@@ -15,7 +15,7 @@ html(lang='en')
                             img(src=val.imgUrl, alt='')
                         div
                             h3
-                                a(href='/detail') #{val.title}
+                                a(href='/detail?id=' + val.id) #{val.title}
                             .info
                                 span.tips
                                     span #{val.country}
