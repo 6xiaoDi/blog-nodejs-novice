@@ -7,9 +7,6 @@ html(lang='en')
         title Document
     body
         .text
-            h1.title 新闻标题
-            .article-info  韩国 时间：2019-6-18
-            p.content
-                | 新闻内容新闻内容
-                | 新闻内容新闻内容
-                | 新闻内容新闻内容
+            h1.title #{title}
+            .article-info  #{country} 时间：#{addTime}
+            p.content #{content}

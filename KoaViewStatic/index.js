@@ -26,8 +26,22 @@ router.get("/index",async ctx=>{
 })
 // 新闻详细页面；
 router.get("/detail",async ctx=>{
-    await ctx.render("detail");
+    // 1.跳转； 2.带参数；
+    // 接收id(如果id没有，就默认为1，防止错误):注意 类型，到底是num还是string，尽量转成num好做查询；
+    let id = parseInt(ctx.request.query.id) || 1;
+    // console.log(typeof id);
+    // 通过id来查询数据；
+    // “==”只管值相等，不管类型 “===”类型和值都需要相等
+    let news =  newsData.filter(v=>v.id===id); // 获取数组对象
+    /**
+     * news  ：  [{id:1,content....}]
+     */
+    let detailData = news[0];
+    // ctx.body = "新闻详细页面";
+    // {detailData} 实际就是对应一个对象{detailData:{内容}}，我们要取其下标里的内容 pug的 #{detailData.title}
+    // detailData 直接对应pug #{title}
+    await ctx.render("detail",detailData);  // 将数据推送到模板里
+    // await ctx.render("detail");
 })
-
 app.use(router.routes());
 app.listen(4000);
