@@ -19,9 +19,19 @@ router.get("/",async ctx=>{
 
 // 新闻列表页面
 router.get("/index",async ctx=>{
+    // 每页显示多少条？
+    // 加入配置项，这样可能PC端和移动端要求每页的条数不一样的
+    let perPage = ctx.request.query.perPage || 5;
+    // 当前页码；
+    let p = 1;
+    // 数据的总条数；
+    let dataCount = newsData.length;
+    // 页码数  13条  每页显示5条 当前页面1页（向上取整）；
+    let pCount = Math.ceil(dataCount/perPage);
     // 加载views中index
     await ctx.render("index",{
-        newsData
+        newsData,
+        pCount
     });
 })
 // 新闻详细页面；

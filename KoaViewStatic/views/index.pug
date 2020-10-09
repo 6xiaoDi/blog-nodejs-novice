@@ -22,9 +22,6 @@ html(lang='en')
                                 span.time |   #{val.addTime}
             .pagination
                 a.prev(href='javascript:;') ⌜
-                a(href='javascript:;') 1
-                a(href='javascript:;') 2
-                a(href='javascript:;') 3
-                a(href='javascript:;') 4
-                a(href='javascript:;') 5
+                - for(let i=1;i<=pCount;i++)
+                    a(href='javascript:;') #{i}
                 a.next(href='javascript:;') ⌝
