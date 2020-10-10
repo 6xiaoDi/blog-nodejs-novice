@@ -22,4 +22,5 @@ router.get("/addNews",adminController.renderAddNews)
 router.get("/newsList",adminController.renderNewsList)
 // 添加数据
 router.post("/addNewsData",adminController.addNewsData)
+router.get("/delNews",adminController.delNews)
 module.exports = router;
